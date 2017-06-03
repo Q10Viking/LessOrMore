@@ -10,9 +10,7 @@ banner: a simple,blog aware,static site generator
 
 ---    
 
-* content
-{:toc}
-
+![index](http://oqyoidw83.bkt.clouddn.com/index.png)
 
 #### 1.Jekyll定义    
 
