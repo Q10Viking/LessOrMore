@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <description>Actually, less is more!</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 03 Jun 2017 20:36:38 +0800</pubDate>
+    <lastBuildDate>Sat, 03 Jun 2017 20:36:38 +0800</lastBuildDate>
+    <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>Hi,Jekyll</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#1jekyll定义&quot; id=&quot;markdown-toc-1jekyll定义&quot;&gt;1.Jekyll定义&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2jekyll工作目录&quot; id=&quot;markdown-toc-2jekyll工作目录&quot;&gt;2.Jekyll工作目录&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3jekyll工作原理&quot; id=&quot;markdown-toc-3jekyll工作原理&quot;&gt;3.Jekyll工作原理&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4如何使用&quot; id=&quot;markdown-toc-4如何使用&quot;&gt;4.如何使用&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5jekyll命令&quot; id=&quot;markdown-toc-5jekyll命令&quot;&gt;5.Jekyll命令&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#6其他知识&quot; id=&quot;markdown-toc-6其他知识&quot;&gt;6.其他知识&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#7参考&quot; id=&quot;markdown-toc-7参考&quot;&gt;7.参考&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div style=&quot;color: red &quot;&gt;在电脑端或手机横屏，浏览会更佳&lt;/div&gt;
+
+&lt;h4 id=&quot;1jekyll定义&quot;&gt;1.Jekyll定义&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Jekyll is a parsing engine bundled as a ruby gem used to build staic websites from dynamic components such as templates,partials,liquid code,markdown,etc.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Jekyll是一个解析引擎，通过将liquid,markdown等文件内容解析生成静态网页。这简化了我们写文章的复杂度。使得我们能够专注写文章，而不用操心文章怎样转换成html文件的形式，并且展示在网页上的过程。&lt;/p&gt;
+
+&lt;h4 id=&quot;2jekyll工作目录&quot;&gt;2.Jekyll工作目录&lt;/h4&gt;
+
+&lt;p&gt;说明：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;从Jekyll 3.2开始，jekyll new 生成的静态网站的形式(默认是minima主题)，使用了gem-based themes来定义theme，这使得默认的目录更加轻便，同时也使得人更加困惑，因为它默认的将_layouts,_includes和_sass存储在了theme-gem中&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;├── about.md
+├── assets
+│   └── main.scss
+├── _config.yml
+├── Gemfile
+├── Gemfile.lock
+├── _includes
+│   ├── disqus_comments.html
+│   ├── footer.html
+│   ├── google-analytics.html
+│   ├── header.html
+│   ├── head.html
+│   ├── icon-github.html
+│   ├── icon-github.svg
+│   ├── icon-twitter.html
+│   └── icon-twitter.svg
+├── index.md
+├── _layouts
+│   ├── default.html
+│   ├── home.html
+│   ├── page.html
+│   └── post.html
+├── LICENSE.txt
+├── _posts
+│   └── 2017-06-03-welcome-to-jekyll.markdown
+├── README.md
+├── _sass
+│   ├── minima
+│   │   ├── _base.scss
+│   │   ├── _layout.scss
+│   │   └── _syntax-highlighting.scss
+│   └── minima.scss
+└── _site
+    ├── about
+    │   └── index.html
+    ├── assets
+    │   └── main.css
+    ├── feed.xml
+    ├── index.html
+    └── jekyll
+        └── update
+            └── 2017
+                └── 06
+                    └── 03
+                        └── welcome-to-jekyll.html&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;_site 是Jekyll将文件解析后，文件存放的地方，相当于我们访问域名的时候的根目录&lt;/li&gt;
+  &lt;li&gt;_post我们将写好的文章放到这个文件夹&lt;/li&gt;
+  &lt;li&gt;_layout存放生成网页的模板，一般都是用Liquid写成&lt;/li&gt;
+  &lt;li&gt;_includes将一个网页的各个部分分解出来，放在这个文件中，提高代码的复用率&lt;/li&gt;
+  &lt;li&gt;_sass里面的.scss文件在经过Jekyll处理后，会在_site中对应的位置生成.css文件来装饰我们的网页&lt;/li&gt;
+  &lt;li&gt;其他文件在生成静态网页的时候都会自动复制到_site中&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;3jekyll工作原理&quot;&gt;3.Jekyll工作原理&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;解析markdown/textfile&lt;/li&gt;
+  &lt;li&gt;计算categories,tags&lt;/li&gt;
+  &lt;li&gt;处理permalinks&lt;/li&gt;
+  &lt;li&gt;从_layout中组织网页&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;4如何使用&quot;&gt;4.如何使用&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;如何发文章   &lt;br /&gt;
+用&lt;strong&gt;.md&lt;/strong&gt;的文件格式&lt;strong&gt;markdown&lt;/strong&gt;语法来处理 &lt;br /&gt;
+保存的格式: &lt;strong&gt;yyyy-mm-dd-your-title.md&lt;/strong&gt; &lt;br /&gt;
+存放在&lt;strong&gt;_post&lt;/strong&gt;文件夹中 &lt;br /&gt;
+内容要有 &lt;a href=&quot;http://jekyllrb.com/docs/frontmatter/&quot;&gt;YAML Front Matter&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;文章内容必须要有:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;---
+layout: post     &amp;lt;!--文章发布的形式--&amp;gt;
+title: define your title  &amp;lt;!--标题--&amp;gt;
+---&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;可选其他&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;---
+layout: post
+title: &amp;quot;Hi,Jekyll&amp;quot;
+categories: Jekyll    &amp;lt;!--分类--&amp;gt;&amp;lt;!--也可以定义多个分类[Jekyll,lessons]--&amp;gt;
+tag: [jekyll,blog]  &amp;lt;!--定义多个标签--&amp;gt;
+colorSet: 0f0       &amp;lt;!--自定义颜色--&amp;gt;
+date: 2017-06-02 10:34:05 +0800   &amp;lt;!--发表的日期--&amp;gt;
+banner: a simple,blog aware,static site generator   &amp;lt;!--banner栏--&amp;gt;
+---  
+
+* content     &amp;lt;!--添加这两栏，根据标题生成目录--&amp;gt;
+{:toc}&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;_config.yml配置文件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;name: Q10Viking
+email: 1193094618@qq.com
+author: 黄壮壮
+url: http://q10viking.com
+github: https://github.com/q10viking/
+baseurl: &amp;quot;&amp;quot;
+description: Actually, less is more!
+meta_description: 黄壮壮,个人博客
+banner: 非淡泊无以明志，非宁静无以致远  
+color: 6C7A89&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;_config.yml中定义的属性都是默认的属性，通过&lt;strong&gt;site&lt;/strong&gt;全局变量访问&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;补充说明&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;permalinks： /something/  &amp;lt;!--似乎在根目录才有效--&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;拓展菜单选项&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;可以在_include/header.html中添加想要的菜单项，然后在根目录中建立一个新的文件夹，用&lt;a href=&quot;https://help.shopify.com/themes/liquid&quot;&gt;Liquid&lt;/a&gt;语言编写自己需要的内容&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;第二种方式在_include/header.html的About中添加选项，在github中创建文件空间，然后处理号链接方式，（在github创建的文件空间中最好将分支设为gh-pages）。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;5jekyll命令&quot;&gt;5.Jekyll命令&lt;/h4&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;jekyll --version   查看jekyll版本  
+jekyll new .     在本目录下生成一个默认的blog  
+jekyll build      生成静态网页   
+jekyll serve     启动jekyll自带的服务程序  
+bundle show minima  在文件中找到minima主题&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;6其他知识&quot;&gt;6.其他知识&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;div&lt;/strong&gt;对与整个网页的布局起着很重要的作用，在Mozilla Firefox中可以通过&lt;strong&gt;开发者&lt;/strong&gt;==》&lt;strong&gt;查看器&lt;/strong&gt;了解&lt;strong&gt;盒子模型&lt;/strong&gt;,然后用&lt;strong&gt;.css&lt;/strong&gt;文件对其处理&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;可以尝试注册一个&lt;a href=&quot;https://www.qiniu.com/&quot;&gt;七牛云&lt;/a&gt;使用它的云存储&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;7参考&quot;&gt;7.参考&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;感谢以下各个网站，组织，作者… …的帮助==V==&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jekyllbootstrap.com/lessons/jekyll-introduction.html&quot;&gt;How Jekyll Works&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://help.shopify.com/themes/liquid&quot;&gt;liquid&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jekyllthemes.org/&quot;&gt;Jekyllthemes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.flatuicolorpicker.com/&quot;&gt;Best Flats Color for UI Design&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.webjeda.com/&quot;&gt;Webjeda&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jmcglone.com/guides/github-pages/&quot;&gt;Creating and Hosting a Personal Site on GitHub&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://askubuntu.com/questions/821657/how-to-get-started-with-jekyll-on-ubuntu-16-04&quot;&gt;How to get started with Jekyll on Ubuntu 16.04&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=bwThn0rxv7M&amp;amp;list=PLm_Qt4aKpfKijgP0rDH7FSJOlS9IBGbT1&amp;amp;index=1&quot;&gt;How to create a website on Github Pages&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 02 Jun 2017 17:24:05 +0800</pubDate>
+        <link>http://localhost:4000/2017/06/02/Hi-Jekyll/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/06/02/Hi-Jekyll/</guid>
+        
+        <category>jekyll</category>
+        
+        <category>blog</category>
+        
+        
+        <category>Jekyll</category>
+        
+      </item>
+    
+  </channel>
+</rss>

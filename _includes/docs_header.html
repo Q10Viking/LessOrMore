@@ -1,0 +1,24 @@
+ 
+<div class="docs-header" id="content" style="background-color: #{% if page.colorSet %}{{ page.colorSet }}{% else %}{{ site.color }}{% endif %}">
+
+
+
+  <div class="container">
+  	{% if page.title and page.date %}
+  	
+		    <h1>{{ page.title }}</h1>
+		    <p>Post on {{ page.date | date: "%b %d, %Y" }} by <a href="/about">{{ site.author }}</a></p>
+		
+
+		<!--
+		    <h1>{{ site.motto }}</h1>
+		    -->
+    {% else %}
+    	<div class="div-doc-head">
+	    	<h1 id="h1-small">{{ page.title }}</h1>
+	    	<hr id="hr-small">
+	    	<span class="h4-small">{{ page.description }}</span> 
+	    </div>
+    {% endif %}
+  </div>
+</div>
